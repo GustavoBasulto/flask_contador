@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Contador</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <h1>Contador</h1>
+            {%if cont==1%}
+            <h2>{{cont}} Ingreso</h2>
+            {%else%}
+            <h2>{{cont}} Ingresos</h2>
+            {%endif%}
+        </div>
+        <div class="buttons">
+            <form name="btnaumenta" action="/aumenta2" method="post">
+                <button class="btn blue" type="submit">Aumenta 2</button>
+            </form>
+            <form name="btnreinicia" action="/destroy_session" method="post">
+                <button class="btn red" type="submit">Reinicia</button>
+            </form>
+            <form name="btnincrementa" action="/aumentan" method="post">
+                <input type="number" name="cant" placeholder="numero a aumentar" required>
+                <button class="btn blue" type="submit">Aumenta</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
